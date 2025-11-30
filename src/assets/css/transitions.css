@@ -1,0 +1,36 @@
+
+/* 🌟 卡片切换动画（上/下滑 + 淡入淡出） */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.8s ease;
+}
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* 🌟 面板缩放动画（设置面板） */
+.panel-fade-enter-active,
+.panel-fade-leave-active {
+  transition: all 0.25s ease;
+  transform-origin: top right;
+}
+.panel-fade-enter-from,
+.panel-fade-leave-to {
+  opacity: 0;
+  transform: scale(0.85);
+}
+
+/* 🌟 图标切换动画（淡入淡出，替代旧 fade-icon） */
+.icon-fade-enter-active,
+.icon-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.icon-fade-enter-from,
+.icon-fade-leave-to {
+  opacity: 0;
+}
