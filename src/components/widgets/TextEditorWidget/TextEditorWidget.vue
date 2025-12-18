@@ -535,7 +535,18 @@ function safeUpdateEasterEggState(modeClicked) {
   }
 }
 
-const audioRef = new Audio('./NewBoys.mp3') 
+const primaryUrl = (process.env.BASE_URL || '/') + 'NewBoys.mp3'
+const fallbackUrl = './NewBoys.mp3'
+
+const audioRef = new Audio(primaryUrl)
+
+// fallback: if primary fails, try the original relative path
+audioRef.addEventListener('error', () => {
+  if (!audioRef.src.includes('NewBoys.mp3') || audioRef.src.includes(primaryUrl)) {
+    audioRef.src = fallbackUrl
+    audioRef.load()
+  }
+})
 
 function togglePlay() {
   if (audioRef.paused) {

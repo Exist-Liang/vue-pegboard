@@ -15,7 +15,8 @@ module.exports = {
       defineProps: 'readonly',
       defineEmits: 'readonly',
       defineExpose: 'readonly',
-      withDefaults: 'readonly'
+      withDefaults: 'readonly',
+      process: 'readonly'
     },
     rules: {
       // 你可以按需启用或关闭规则
